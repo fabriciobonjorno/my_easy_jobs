@@ -1,0 +1,47 @@
+# Extendendo as configurações do RuboCop com as gems adicionais
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-rspec_rails
+  - rubocop-factory_bot
+  - rubocop-faker
+
+# Configurações específicas para rubocop-performance
+Performance:
+  Enabled: true
+
+# Configurações específicas para rubocop-rails
+Rails:
+  Enabled: true
+
+# Configurações específicas para rubocop-rspec
+RSpec:
+  Enabled: true
+
+# Configurações específicas para rubocop-rspec_rails
+RSpecRails:
+  Enabled: true
+
+# Configurações específicas para rubocop-factory_bot
+FactoryBot:
+  Enabled: true
+
+# Configurações específicas para rubocop-faker
+Faker:
+  Enabled: true
+
+# Outras configurações personalizadas do RuboCop
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'config/**/*'
+    - 'bin/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+# Desativa a regra de documentação para arquivos específicos
+Style/Documentation:
+  Exclude:
+    - 'app/helpers/application_helper.rb'
+    - 'app/mailers/application_mailer.rb'
+    - 'app/models/application_record.rb'
