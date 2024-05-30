@@ -1,0 +1,21 @@
+<%= render 'layouts/head_and_body' %>
+<main class="w-full min-h-screen flex flex-col md:flex-row items-center justify-center mx-auto bg-gray-50 dark:bg-gray-900">
+  <div class="absolute top-0 right-0">
+    <button id="theme-toggle" type="button" class="text-white xy-100 text-sm p-4">
+      <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+      <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+    </button>
+  </div>
+  <section class="w-full flex-1 flex flex-col justify-center items-center px-6">
+    <div class="w-full min-h-[650px] max-w-xl flex justify-center items-center flex-col gap-4 p-6 bg-white rounded-lg shadow dark:bg-gray-800">
+      <%= image_tag 'logo.png', class: "w-28 hover:scale-110 duration-300", alt:"Logo Easy Jobs" %>
+      <h1 class="text-2xl font-semibold dark:text-white">Easy Jobs</h1>
+      <%= yield %>
+    </div>
+  </section>
+  <section class="hidden md:flex w-full flex-1 flex-col gap-6 p-4 bg-blue-500 h-screen items-center justify-center">
+    <h1 class="text-white text-2xl text-center max-w-lg lg:text-3xl"><%= t('auth.message').html_safe %></h1>
+    <%= image_tag 'hr_figure.png', alt: "Processos seletivos ágeis", class: "w-5/6 lg:w-full lg:max-w-xl" %>
+  </section>
+</main>
+<%= render 'layouts/footer_and_body' %>

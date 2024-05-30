@@ -3,7 +3,13 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  layout :layout_by_resource
+
   protected
+
+  def layout_by_resource
+    'authentication' if devise_controller?
+  end
 
   def configure_permitted_parameters
     if resource_class == User
