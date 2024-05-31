@@ -10,6 +10,8 @@ en:
         current_sign_in_at: Current sign in at
         current_sign_in_ip: Current sign in IP
         email: Email
+        name: Name
+        birthdate: Birthdate
         encrypted_password: Encrypted password
         failed_attempts: Failed attempts
         last_sign_in_at: Last sign in at
@@ -172,3 +174,4 @@ en:
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
+      blank: No se puede dejar en blanco

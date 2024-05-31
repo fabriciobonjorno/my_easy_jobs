@@ -1,29 +1,25 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "companies/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-6 w-full" }) do |f| %>
+  <%= f.hidden_field :user_type, value: params[:user_type] %>
+  <div class="relative z-0 w-full mb-5 group">
+    <%= f.text_field :company_name, class: "block py-2.5 px-0 w-full text-sm #{form_input_class(f, :company_name)} text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white outline-none focus:outline-none focus:ring-0 peer", placeholder: " ", autofocus: true, autocomplete: :false %>
+    <%= f.label :company_name, class: "peer-focus:font-medium absolute text-sm #{form_label_class(f, :company_name)} duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+    <span class="font-medium text-red-600 dark:text-red-500"><%= errors_for(f, :company_name) if f.object.errors[:company_name].any? %></span>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="relative z-0 w-full mb-5 group">
+    <%= f.email_field :email, class: "block py-2.5 px-0 w-full text-sm #{form_input_class(f, :email)} text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white outline-none focus:outline-none focus:ring-0 peer", placeholder: " ", autocomplete: :false %>
+    <%= f.label :email, class: "peer-focus:font-medium absolute text-sm #{form_label_class(f, :email)} duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+    <span class="font-medium text-red-600 dark:text-red-500"><%= errors_for(f, :email) if f.object.errors[:email].any? %></span>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="relative z-0 w-full mb-2 group">
+    <%= f.password_field :password, class: "block py-2.5 px-0 w-full text-sm #{form_input_class(f, :password)} text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white outline-none focus:outline-none focus:ring-0 peer", placeholder: " ", autocomplete: :false %>
+    <%= f.label :password, class: "peer-focus:font-medium absolute text-sm #{form_label_class(f, :password)} duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+    <span class="font-medium text-red-600 dark:text-red-500"><%= errors_for(f, :password) if f.object.errors[:password].any? %></span>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="relative z-0 w-full mb-2 group">
+    <%= f.password_field :password_confirmation, class: "block py-2.5 px-0 w-full text-sm #{form_input_class(f, :password_confirmation)} text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white outline-none focus:outline-none focus:ring-0 peer", placeholder: " ", autocomplete: :false %>
+    <%= f.label :password_confirmation, class: "peer-focus:font-medium absolute text-sm #{form_label_class(f, :password_confirmation)} duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+    <span class="font-medium text-red-600 dark:text-red-500"><%= errors_for(f, :password_confirmation) if f.object.errors[:password_confirmation].any? %></span>
   </div>
+  <%= f.submit "Sign up", class: "w-full p-2 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800" %>
 <% end %>
-
-<%= render "companies/shared/links" %>
+<%= render 'layouts/shared/links' %>

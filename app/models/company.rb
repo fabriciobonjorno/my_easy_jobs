@@ -7,5 +7,5 @@ class Company < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable,
          :timeoutable
 
-  validates :company_name, presence: true
+  validates :company_name, :password_confirmation, presence: true
 end

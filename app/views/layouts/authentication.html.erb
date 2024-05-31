@@ -15,7 +15,7 @@
     <div class="w-full min-h-[650px] max-w-xl flex justify-center items-center flex-col gap-4 p-6 bg-white rounded-lg shadow dark:bg-gray-800">
       <%= image_tag 'logo.png', class: "w-28 hover:scale-110 duration-300", alt:"Logo Easy Jobs" %>
       <h1 class="text-2xl font-semibold dark:text-white">Easy Jobs</h1>
-     <%= render 'layouts/shared/locale_form' %>
+     <%= yield %>      
     </div>
   </section>
   <section class="hidden md:flex w-full flex-1 flex-col gap-6 p-4 bg-blue-500 h-screen items-center justify-center">

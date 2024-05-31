@@ -7,5 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable,
          :timeoutable
 
-  validates :name, :birthdate, presence: true
+  validates :name, :birthdate, :password_confirmation, presence: true
 end
