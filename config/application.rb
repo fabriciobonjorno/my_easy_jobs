@@ -37,8 +37,16 @@ module MyEasyJobs
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.i18n.available_locales = [:en, :es, :'pt-BR']
+
+    # Where the I18n library should search for translation files
+    I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
+
+    # Permitted locales available for the application
+    I18n.available_locales = [:en, :es, :'pt-BR']
+
+    # Set default locale to something other than :en
     config.i18n.default_locale = :'pt-BR'
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
