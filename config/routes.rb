@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+post '/update_locale', to: 'application#update_locale'
 # Devise configuration
 devise_for :companies, skip: %i[sessions passwords confirmations registrations]
 devise_for :users, skip: %i[sessions passwords confirmations registrations]

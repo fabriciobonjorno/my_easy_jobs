@@ -46,6 +46,7 @@ module MyEasyJobs
 
     # Set default locale to something other than :en
     config.i18n.default_locale = :'pt-BR'
+    config.i18n.fallbacks = true
 
     # Don't generate system test files.
     config.generators.system_tests = nil

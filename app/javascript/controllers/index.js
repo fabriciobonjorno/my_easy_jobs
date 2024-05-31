@@ -3,8 +3,12 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+
 import DarkmodeController from "./darkmode_controller"
+application.register("darkmode", DarkmodeController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-application.register("darkmode", DarkmodeController)
+
+import LocaleController from "./locale_controller"
+application.register("locale", LocaleController)
